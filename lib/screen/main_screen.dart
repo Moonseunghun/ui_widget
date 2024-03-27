@@ -31,6 +31,18 @@ class _MainScreenState extends State<MainScreen> {
           return listItem(index);
         }),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          //새 아이디어 작성 화면으로 이동
+          // Navigator.push(context, route)
+        },
+        child: Image.asset(
+          'assets/idea.png',
+          width: 48,
+          height: 48,
+        ),
+        backgroundColor: Color(0xff7f52fd).withOpacity(0.7),
+      ),
     );
   }
 }

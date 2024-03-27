@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -34,14 +35,25 @@ Widget listItem(int index) {
           ),
         ),
         //아이디어 중요도 점수
-        RatingBar.builder(
-            itemBuilder: (context, index) {
-              return Icon(
-                Icons.star,
-                color: Colors.amber,
-              );
-            },
-            onRatingUpdate: (value) {})
+       Align(
+         alignment: Alignment.bottomLeft,
+         child:Container(
+           margin: EdgeInsets.only(left: 16, bottom: 16),
+           child: RatingBar.builder(
+             initialRating: 3,
+             minRating: 1,
+             direction: Axis.horizontal,
+             itemCount: 5,
+             itemSize: 16,
+             itemPadding: EdgeInsets.symmetric(horizontal:  0),
+             itemBuilder: (context, index) {
+               return Icon(
+                 Icons.star,
+                 color: Colors.amber,
+               );
+             },
+             onRatingUpdate: (value) {}),
+         ) ,)
       ],
     ),
   );
